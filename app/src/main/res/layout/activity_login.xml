@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="295dp"
+        android:layout_height="259dp"
+        android:src="@drawable/applogo" />
+    <EditText
+        android:id="@+id/EmailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#000"
+        />
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your password"
+        android:textColor="#000"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textColorHint="#000"
+        />
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        />
+    <TextView
+        android:id="@+id/SignUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="New member? Sign Up!!!"
+        />
+
+</LinearLayout>
