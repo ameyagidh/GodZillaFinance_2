@@ -1,17 +1,24 @@
 package com.example.godzillafinance;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -86,7 +93,46 @@ public class RegistrationActivity extends AppCompatActivity {
                     Password_Et.requestFocus();
                     return;
                 }
+                ProgressBar.setVisibility(View.VISIBLE);
 
+                Log.d("Ameya", "onComplete: qopqaaa");
+                // Add the user to firebase database.
+
+                mAuth.createUserWithEmailAndPassword(Email_val,Password_val)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    UserCreated user = new UserCreated(FullName_val,Age_val,Email_val);
+                                    Log.d("Ameya", "onComplete: qopq");
+                                    // Add the user into firebase now
+                                    FirebaseDatabase.getInstance().getReference("users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                               // User added at a particular UUid value of the current user.
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(RegistrationActivity.this,"User Created Successfully",Toast.LENGTH_LONG).show();
+                                                        ProgressBar.setVisibility(View.VISIBLE);
+                                                        // User directed to login.
+                                                        gotToActivity_LoginHere();
+                                                    }
+                                                    else{
+                                                        Toast.makeText(RegistrationActivity.this,"Failed to create a User",Toast.LENGTH_LONG).show();
+                                                        ProgressBar.setVisibility(View.GONE);
+                                                    }
+
+                                                }
+                                            });
+                                }
+                                else{
+                                    Toast.makeText(RegistrationActivity.this,"Failed to create a User",Toast.LENGTH_LONG).show();
+                                    ProgressBar.setVisibility(View.GONE);
+
+                                }
+                            }
+                        });
             }
         });
     }
