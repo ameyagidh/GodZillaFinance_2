@@ -157,8 +157,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void gotToActivity_Menu(){
-        // Already a user.
-        Intent i = new Intent(RegistrationActivity.this,MenuActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(RegistrationActivity.this,MenuActivity.class);
+        startActivity(intent);
     }
 }
