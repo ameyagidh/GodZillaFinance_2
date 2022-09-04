@@ -34,7 +34,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView LoginBack_btn;
     private ProgressBar ProgressBar;
     private FirebaseAuth mAuth;
-    private Button Menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
         SignUp_btn = findViewById(R.id.SignUp);
         LoginBack_btn = findViewById(R.id.LoginBack);
         ProgressBar = findViewById(R.id.ProgressBar);
-        Menu = findViewById(R.id.Menu);
+
 
         mAuth = FirebaseAuth.getInstance();
         LoginBack_btn.setOnClickListener(new View.OnClickListener() {
@@ -139,22 +138,12 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-        Menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotToActivity_Menu();
-            }
-        });
+
     }
 
     public void gotToActivity_LoginHere(){
         // Already a user.
         Intent i = new Intent(RegistrationActivity.this,LoginActivity.class);
         startActivity(i);
-    }
-
-    public void gotToActivity_Menu(){
-        Intent intent = new Intent(RegistrationActivity.this,MenuActivity.class);
-        startActivity(intent);
     }
 }

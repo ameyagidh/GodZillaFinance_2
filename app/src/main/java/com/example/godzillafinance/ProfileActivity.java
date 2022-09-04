@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userId;
+    private Button Menu_btn;
 
 
     @Override
@@ -42,6 +44,15 @@ public class ProfileActivity extends AppCompatActivity {
 
         LogOut_Btn = findViewById(R.id.LogOut);
         mAuth = FirebaseAuth.getInstance();
+
+        Menu_btn = findViewById(R.id.Menu);
+
+        Menu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotToActivity_Menu();
+            }
+        });
 
         LogOut_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +94,10 @@ public class ProfileActivity extends AppCompatActivity {
         Intent i = new Intent(ProfileActivity.this,LoginActivity.class);
         startActivity(i);
 
+    }
+
+    public void gotToActivity_Menu(){
+        Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
+        startActivity(intent);
     }
 }
