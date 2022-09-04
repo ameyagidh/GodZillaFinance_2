@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                            else{
                                ProgressBar.setVisibility(View.GONE);
                                user.sendEmailVerification();
-                                Toast.makeText(LoginActivity.this,"Failed to login user",Toast.LENGTH_LONG);
+                                Toast.makeText(LoginActivity.this,"Check your email to verify your account.",Toast.LENGTH_LONG);
                             }
                         }
                         else{

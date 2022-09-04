@@ -117,7 +117,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
-                                                        Toast.makeText(RegistrationActivity.this,"User Created Successfully",Toast.LENGTH_LONG).show();
+                                                        Toast.makeText(RegistrationActivity.this,"User Created Successfully check email to verify the email address.",Toast.LENGTH_LONG).show();
                                                         ProgressBar.setVisibility(View.GONE);
                                                         // User directed to login.
                                                         gotToActivity_LoginHere();
@@ -133,12 +133,9 @@ public class RegistrationActivity extends AppCompatActivity {
                                 else{
                                     Toast.makeText(RegistrationActivity.this,"Failed to create a User",Toast.LENGTH_LONG).show();
                                     ProgressBar.setVisibility(View.GONE);
-
                                 }
                             }
                         });
-
-
             }
         });
 
