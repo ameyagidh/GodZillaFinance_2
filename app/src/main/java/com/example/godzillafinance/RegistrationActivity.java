@@ -15,10 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -95,9 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 ProgressBar.setVisibility(View.VISIBLE);
 
-                Log.d("Ameya", "onComplete: qopqaaa");
                 // Add the user to firebase database.
-
                 mAuth.createUserWithEmailAndPassword(Email_val,Password_val)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -133,9 +135,12 @@ public class RegistrationActivity extends AppCompatActivity {
                                 }
                             }
                         });
+
+
             }
         });
     }
+
     public void gotToActivity_LoginHere(){
         // Already a user.
         Intent i = new Intent(RegistrationActivity.this,LoginActivity.class);
