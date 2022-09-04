@@ -8,25 +8,59 @@
 
     <TextView
         android:id="@+id/Welcome"
-        android:layout_width="151dp"
-        android:layout_height="21dp"
-        android:layout_marginBottom="560dp"
+        android:layout_width="169dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="28dp"
         android:text="Welcome"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/FullName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/LogOut"
         android:layout_width="38dp"
         android:layout_height="45dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintBottom_toTopOf="@+id/Welcome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584"
         app:srcCompat="@android:drawable/ic_lock_power_off" />
+
+    <TextView
+        android:id="@+id/FullName"
+        android:layout_width="172dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="24dp"
+        android:text="Full Name"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="174dp"
+        android:layout_height="28dp"
+        android:text="Age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <TextView
+        android:id="@+id/EmailAddress"
+        android:layout_width="171dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="372dp"
+        android:text="Email Address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

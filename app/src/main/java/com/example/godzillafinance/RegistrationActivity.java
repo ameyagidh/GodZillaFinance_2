@@ -106,7 +106,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                     UserCreated user = new UserCreated(FullName_val,Age_val,Email_val);
                                     Log.d("Ameya", "onComplete: qopq");
                                     // Add the user into firebase now
-                                    FirebaseDatabase.getInstance().getReference("users")
+                                    FirebaseDatabase.getInstance().getReference("Users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                // User added at a particular UUid value of the current user.
