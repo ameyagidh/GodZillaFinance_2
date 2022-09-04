@@ -40,6 +40,13 @@ public class LoginActivity extends AppCompatActivity {
         ProgressBar = findViewById(R.id.ProgressBar);
         mAuth = FirebaseAuth.getInstance();
 
+        Forgot_Tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoActivity_ForgotPassword();
+            }
+        });
+
         Login_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +119,11 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void gotoActivity_RegisterHere() {
         Intent i = new Intent(this,RegistrationActivity.class);
+        startActivity(i);
+    }
+
+    public void gotoActivity_ForgotPassword() {
+        Intent i = new Intent(this,ForgotPasswordActivity.class);
         startActivity(i);
     }
 }

@@ -114,7 +114,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
                                                         Toast.makeText(RegistrationActivity.this,"User Created Successfully",Toast.LENGTH_LONG).show();
-                                                        ProgressBar.setVisibility(View.VISIBLE);
+                                                        ProgressBar.setVisibility(View.GONE);
                                                         // User directed to login.
                                                         gotToActivity_LoginHere();
                                                     }
