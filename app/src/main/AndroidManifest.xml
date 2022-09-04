@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GodZillaFinance"
         tools:targetApi="31">
         <activity
-            android:name=".RegistrationActiivity"
+            android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

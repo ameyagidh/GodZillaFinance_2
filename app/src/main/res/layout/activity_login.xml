@@ -10,9 +10,10 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:layout_width="295dp"
+        android:layout_width="wrap_content"
         android:layout_height="259dp"
         android:src="@drawable/applogo" />
+
     <EditText
         android:id="@+id/EmailId"
         android:layout_width="match_parent"
@@ -33,20 +34,39 @@
         android:textSize="20sp"
         android:textColorHint="#000"
         />
+<ProgressBar
+    android:id="@+id/ProgressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    />
     <Button
         android:id="@+id/LoginButton"
-        android:layout_width="match_parent"
+        android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Login"
-        android:textAllCaps="false"
-        />
-    <TextView
-        android:id="@+id/SignUpTextView"
+        android:textAllCaps="false" />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="New member? Sign Up!!!"
-        />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Forgot"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:gravity="center"
+            android:text="New member? Sign Up" />
+
+        <TextView
+            android:id="@+id/SignUpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Forgot password?" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
