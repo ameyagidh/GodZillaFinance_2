@@ -11,4 +11,5 @@ public class Input_layout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_layout);
     }
+
 }
