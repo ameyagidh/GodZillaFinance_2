@@ -3,6 +3,8 @@ package com.example.godzillafinance;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -10,12 +12,17 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -37,6 +44,8 @@ public class BudgetActivity extends AppCompatActivity {
     private DatabaseReference budgetRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
+    private RecyclerView recyclerView;
+    private TextView Budget_Tv_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +59,19 @@ public class BudgetActivity extends AppCompatActivity {
                 .getReference().child("budget").child(mAuth.getCurrentUser().getUid());
         loader = new ProgressDialog(this);
         fb = findViewById(R.id.floatingActionButton);
+
+        // Displaying the items in the recycler view.
+        recyclerView = findViewById(R.id.RecyclerView);
+        Budget_Tv_ = findViewById(R.id.Budget_Tv_);
+        // To display items in a recycler view you will need a linear layout manager
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setStackFromEnd(true);
+        linearLayoutManager.setReverseLayout(true);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
+
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,5 +163,90 @@ public class BudgetActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // For recycler view you need to create a view holder,Builder,linearLayout and a view.
+
+        FirebaseRecyclerOptions<Data_Added> options = new FirebaseRecyclerOptions.Builder<Data_Added>()
+                .setQuery(budgetRef,Data_Added.class).build();
+        // take the data then set it to the item values.
+        // recycler Adapter pass the data and the viewHolder(has all the text views which need to be set to their repective values.
+        FirebaseRecyclerAdapter<Data_Added,MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data_Added, MyViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Data_Added model) {
+                holder.setAmount_tv("Allocated amount: $ "+ model.getAmount());
+                holder.setDate_tv("On: "+model.getDate());
+                holder.setName_tv("BudgetItem: "+model.getItem_name());
+                switch(model.getItem_name()) {
+                    case "Transport":
+                        holder.imageView.setImageResource(R.drawable.ic_transport);
+                        break;
+                    case "Food":
+                        holder.imageView.setImageResource(R.drawable.ic_food);
+                        break;
+                    case "Education":
+                        holder.imageView.setImageResource(R.drawable.ic_education);
+                        break;
+                    case "Medicine":
+                        holder.imageView.setImageResource(R.drawable.ic_health);
+                        break;
+
+                    case "Shopping":
+                        holder.imageView.setImageResource(R.drawable.ic_shirt);
+                        break;
+
+                    case "House":
+                        holder.imageView.setImageResource(R.drawable.ic_house);
+                        break;
+
+                    case "Other":
+                        holder.imageView.setImageResource(R.drawable.ic_other);
+                        break;
+                }
+            }
+
+            @NonNull
+            @Override
+            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieve_layout,parent,false);
+                return new MyViewHolder(view);
+            }
+        };
+    }
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        View myView;
+        public ImageView imageView;
+        public TextView Date_tv;
+        public TextView amount_tv;
+        public TextView Name_tv;
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            // Initialize the view and the items in the view.
+            // use setters and getters for the same.
+            myView = itemView;
+            imageView = itemView.findViewById(R.id.img_tv) ;
+            Date_tv = itemView.findViewById(R.id.Date_tv);
+            amount_tv = itemView.findViewById(R.id.Amount_tv);
+            Name_tv = itemView.findViewById(R.id.Name_tv);
+
+        }
+
+        public void setAmount_tv(String amt) {
+            TextView amount_tv = itemView.findViewById(R.id.Amount_tv);
+            amount_tv.setText(amt);
+        }
+        public void setDate_tv(String Date) {
+            TextView Date_tv = itemView.findViewById(R.id.Date_tv);
+            Date_tv.setText(Date);
+        }
+        public void setName_tv(String Name) {
+            TextView Name_tv = itemView.findViewById(R.id.Name_tv);
+            Name_tv.setText(Name);
+        }
     }
 }
