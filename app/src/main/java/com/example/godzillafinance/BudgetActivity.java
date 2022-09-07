@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -46,6 +47,10 @@ public class BudgetActivity extends AppCompatActivity {
     private ProgressDialog loader;
     private RecyclerView recyclerView;
     private TextView Budget_Tv_;
+
+    private String post_key = "";
+    private String item = "";
+    private int amount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,7 +183,7 @@ public class BudgetActivity extends AppCompatActivity {
         // recycler Adapter pass the data and the viewHolder(has all the text views which need to be set to their repective values.
         FirebaseRecyclerAdapter<Data_Added,MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data_Added, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Data_Added model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull Data_Added model) {
                 holder.setAmount_tv("Allocated amount: $ "+ model.getAmount());
                 holder.setDate_tv("On: "+model.getDate());
                 holder.setName_tv("BudgetItem: "+model.getItem_name());
@@ -208,6 +213,18 @@ public class BudgetActivity extends AppCompatActivity {
                         holder.imageView.setImageResource(R.drawable.ic_other);
                         break;
                 }
+//                when any iteme is clicked in the holder
+                holder.myView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        post_key = getRef(position).getKey();
+                        item = model.getItem_name();
+                        amount = model.getAmount();
+                        // Amount and item name are taken from the item clicked and
+                        // then to update them we call update_item() function
+                        update_item();
+                    }
+                });
             }
 
             @NonNull
@@ -253,4 +270,16 @@ public class BudgetActivity extends AppCompatActivity {
             Name_tv.setText(Name);
         }
     }
+
+    private void update_item(){
+      // We need to create a alert dialog box to add or delete item amount
+      AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
+      LayoutInflater inflater = LayoutInflater.from(this);
+      View mView = inflater.inflate(R.layout.update_resource,null);
+      myDialog.setView(mView);
+      final AlertDialog dialog = myDialog.create();
+
+      dialog.show();
+    }
+
 }
