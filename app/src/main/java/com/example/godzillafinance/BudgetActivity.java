@@ -165,6 +165,8 @@ public class BudgetActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    // Displaying the fetched items in the recycler view.
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -215,6 +217,8 @@ public class BudgetActivity extends AppCompatActivity {
                 return new MyViewHolder(view);
             }
         };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
     public class MyViewHolder extends RecyclerView.ViewHolder{
         View myView;
