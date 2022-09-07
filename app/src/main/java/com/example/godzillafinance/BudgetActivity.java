@@ -278,6 +278,64 @@ public class BudgetActivity extends AppCompatActivity {
       View mView = inflater.inflate(R.layout.update_resource,null);
       myDialog.setView(mView);
       final AlertDialog dialog = myDialog.create();
+      final TextView mItem = mView.findViewById(R.id.TodaySpending);
+      final EditText mAmount = mView.findViewById(R.id.EnterAmount);
+      final Button Save_btn = mView.findViewById(R.id.Update_Btn_1);
+      final Button Delete_btn = mView.findViewById(R.id.Cancel_button_1);
+
+      mAmount.setText(String.valueOf(amount));
+      mAmount.setSelection(String.valueOf(amount).length());
+      // set selection to set the cursor to a particular position.
+
+      Save_btn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              amount = Integer.parseInt(mAmount.getText().toString());
+              // Adding the date
+              DateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+              Calendar cal = Calendar.getInstance();
+              String date = df.format(cal.getTime());
+
+              MutableDateTime epoch =new MutableDateTime();
+              // epoch to set at start of january 1990 and calculate accordingly
+              epoch.setDate(0);
+              DateTime now = new DateTime();
+              Months month = Months.monthsBetween(epoch,now);
+              Data_Added data_added = new Data_Added(post_key,item,
+                      date,month.getMonths(), amount);
+              // Add the data of type datacreated using budgetRef using firebasedatabase.
+
+              budgetRef.child(post_key).setValue(data_added).addOnCompleteListener(new OnCompleteListener<Void>() {
+                  @Override
+                  public void onComplete(@NonNull Task<Void> task) {
+                      if(task.isSuccessful()){
+                          Toast.makeText(BudgetActivity.this,"Item updated.",Toast.LENGTH_LONG).show();
+                      }
+                      else{
+                          Toast.makeText(BudgetActivity.this,"Item updation failed.",Toast.LENGTH_LONG).show();
+                      }
+                  }
+              });
+              dialog.dismiss();
+          }
+      });
+      Delete_btn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              budgetRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                  @Override
+                  public void onComplete(@NonNull Task<Void> task) {
+                      if(task.isSuccessful()){
+                          Toast.makeText(BudgetActivity.this,"Item Removed.",Toast.LENGTH_LONG).show();
+                      }
+                      else{
+                          Toast.makeText(BudgetActivity.this,"Item removal failed.",Toast.LENGTH_LONG).show();
+                      }
+                  }
+              });
+              dialog.dismiss();
+          }
+      });
 
       dialog.show();
     }
