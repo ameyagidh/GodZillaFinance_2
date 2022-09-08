@@ -66,7 +66,34 @@
             android:gravity="center"
             android:text="Forgot password?" />
 
-<!--    </LinearLayout>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/Call_image_view"
+            android:layout_width="86dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginEnd="52dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Email_Image_View"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/call_1" />
 
+        <ImageView
+            android:id="@+id/Email_Image_View"
+            android:layout_width="76dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="52dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/email_1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

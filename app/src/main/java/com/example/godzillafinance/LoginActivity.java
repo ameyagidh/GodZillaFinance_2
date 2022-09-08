@@ -1,10 +1,12 @@
 package com.example.godzillafinance;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView Forgot_Tv;
     private ProgressBar ProgressBar;
     private FirebaseAuth mAuth;
+    private ImageView Call_Img_View;
+    private ImageView Email_Img_View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,23 @@ public class LoginActivity extends AppCompatActivity {
         SignUp_Tv = findViewById(R.id.SignUpTextView);
         Forgot_Tv = findViewById(R.id.Forgot);
         ProgressBar = findViewById(R.id.ProgressBar);
+        Call_Img_View = findViewById(R.id.Call_image_view);
+        Email_Img_View = findViewById(R.id.Email_Image_View);
         mAuth = FirebaseAuth.getInstance();
 
+        Call_Img_View.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call_Img_Update();
+            }
+        });
+
+        Email_Img_View.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Email_Img_Update();
+            }
+        });
         Forgot_Tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,4 +145,22 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this,ForgotPasswordActivity.class);
         startActivity(i);
     }
+   public void Call_Img_Update(){
+       Uri number = Uri.parse("tel:8574379760");
+       Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+       startActivity(callIntent);
+   }
+   public void Email_Img_Update(){
+       String recepientList = "Team1@gmail.com";
+       String [] recepients = recepientList.split(",");
+       String subject = "Help";
+       String message = "I have a query";
+
+       Intent i = new Intent(Intent.ACTION_SEND);
+       i.putExtra(i.EXTRA_EMAIL,recepients);
+       i.putExtra(i.EXTRA_SUBJECT,subject);
+       i.putExtra(i.EXTRA_TEXT,message);
+       i.setType("message/rfc822");
+       startActivity(i.createChooser(i,"choose an email client:- "));
+   }
 }

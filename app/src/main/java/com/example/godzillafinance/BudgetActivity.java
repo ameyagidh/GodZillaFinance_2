@@ -28,8 +28,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Months;
@@ -38,6 +41,7 @@ import org.joda.time.MutableDateTime;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class BudgetActivity extends AppCompatActivity {
 
@@ -56,7 +60,6 @@ public class BudgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
-
         mAuth = FirebaseAuth.getInstance();
         // Adding items in the firebase database with json structure of budget then child is the uuid of the
         // current user.
@@ -74,9 +77,23 @@ public class BudgetActivity extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
+        // Calculating the total value of the items and displaying them.
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int total = 0;
+                for(DataSnapshot snapshot1:snapshot.getChildren()){
+                    Data_Added data = snapshot1.getValue(Data_Added.class);
+                    total += data.getAmount();
+                    Budget_Tv_.setText("Total spending is $:- "+String.valueOf(total));
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-
+            }
+        });
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
