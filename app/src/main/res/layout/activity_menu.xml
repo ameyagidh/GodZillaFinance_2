@@ -61,58 +61,58 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <TableRow>
+<!--        <TableRow>-->
 
-            <TextView
-                android:id="@+id/Budget_Tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/boarder_black"
-                android:gravity="center"
-                android:text="$:- 0"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/Budget_Tv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/boarder_black"-->
+<!--                android:gravity="center"-->
+<!--                android:text="$:- 0"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/Today_Tv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/boarder_black"
-                android:gravity="center"
-                android:text="$:- 0"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/Today_Tv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/boarder_black"-->
+<!--                android:gravity="center"-->
+<!--                android:text="$:- 0"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/Week_Tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/boarder_black"
-                android:gravity="center"
-                android:text="$:- 0"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/Week_Tv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/boarder_black"-->
+<!--                android:gravity="center"-->
+<!--                android:text="$:- 0"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/Month_Tv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/boarder_black"
-                android:gravity="center"
-                android:text="$:- 0"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/Month_Tv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/boarder_black"-->
+<!--                android:gravity="center"-->
+<!--                android:text="$:- 0"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/Savings_Tv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/boarder_black"
-                android:gravity="center"
-                android:text="$:- 0"
-                android:textStyle="bold" />
-        </TableRow>
+<!--            <TextView-->
+<!--                android:id="@+id/Savings_Tv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/boarder_black"-->
+<!--                android:gravity="center"-->
+<!--                android:text="$:- 0"-->
+<!--                android:textStyle="bold" />-->
+<!--        </TableRow>-->
     </TableLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -277,7 +277,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AnalyticsCardView"
+                android:id="@+id/GamesCardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
@@ -298,19 +298,19 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/ic_analytics" />
+                        android:src="@drawable/play" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Analytics"
+                        android:layout_width="28dp"
+                        android:layout_height="16dp"
+                        android:text="Game"
                         android:textColor="#020202"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/HistoryCardView"
+                android:id="@+id/FetchCardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
@@ -331,12 +331,12 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/ic_history" />
+                        android:src="@drawable/news" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="History"
+                        android:text="Fetch"
                         android:textColor="#020202"
                         android:textStyle="bold" />
 

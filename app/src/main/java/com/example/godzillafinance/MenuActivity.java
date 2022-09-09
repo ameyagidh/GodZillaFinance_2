@@ -13,8 +13,8 @@ public class MenuActivity extends AppCompatActivity {
     private CardView todayCardView;
     private CardView weeklyCardView;
     private CardView MonthlyCardView;
-    private CardView HistoryCardView;
-    private CardView AnalyticsCardView;
+    private CardView FetchCardView;
+    private CardView PlayCardView;
     private CardView Learning;
 
     @Override
@@ -26,8 +26,8 @@ public class MenuActivity extends AppCompatActivity {
         todayCardView = (CardView) findViewById(R.id.todayCardView);
         weeklyCardView = (CardView) findViewById(R.id.WeekCardView);
         MonthlyCardView = (CardView) findViewById(R.id.MonthlyCardView);
-        HistoryCardView = (CardView) findViewById(R.id.HistoryCardView);
-        AnalyticsCardView = (CardView) findViewById(R.id.AnalyticsCardView);
+        FetchCardView = (CardView) findViewById(R.id.FetchCardView);
+        PlayCardView = (CardView) findViewById(R.id.GamesCardView);
 
         budgetCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,11 +49,11 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {gotoActivity4();}
         });
-        HistoryCardView.setOnClickListener(new View.OnClickListener() {
+        FetchCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {gotoActivity5();}
         });
-        AnalyticsCardView.setOnClickListener(new View.OnClickListener() {
+        PlayCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {gotoActivity6();}
         });
@@ -75,11 +75,11 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void gotoActivity5(){
-        Intent i = new Intent(this,HistoryActivity.class);
+        Intent i = new Intent(this,NewsFeed.class);
         startActivity(i);
     }
     public void gotoActivity6(){
-        Intent i = new Intent(this,AnalyticsActivity.class);
+        Intent i = new Intent(this,PlayActivity.class);
         startActivity(i);
     }
 }
