@@ -19,7 +19,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ProfileActivity extends AppCompatActivity {
+import android.graphics.Color;
+
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
+
+public class ProfileActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener{
 
     private ImageView LogOut_Btn;
     private TextView FullName_Et;
@@ -32,6 +37,13 @@ public class ProfileActivity extends AppCompatActivity {
     private String userId;
     private Button Menu_btn;
 
+    private Button click;
+    private PieChart chart;
+    public static int i1 = 15;
+    public static int i2 = 25;
+    public static int i3 = 35;
+
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +56,25 @@ public class ProfileActivity extends AppCompatActivity {
 
         LogOut_Btn = findViewById(R.id.LogOut);
         mAuth = FirebaseAuth.getInstance();
+
+        click = findViewById(R.id.btn_click);
+        chart = findViewById(R.id.pie_chart);
+
+        button = (Button) findViewById(R.id.Enter);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
+
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addToPieChart();
+            }
+        });
+
 
         Menu_btn = findViewById(R.id.Menu);
 
@@ -99,5 +130,28 @@ public class ProfileActivity extends AppCompatActivity {
     public void gotToActivity_Menu(){
         Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
         startActivity(intent);
+    }
+    private void addToPieChart() {
+        // add to pie chart
+
+        chart.addPieSlice(new PieModel("Spendings", i2, Color.parseColor("#ff0000")));
+        chart.addPieSlice(new PieModel("Earnings", i1, Color.parseColor("#FFFF00")));
+        chart.addPieSlice(new PieModel("Savings", i3, Color.parseColor("#00FF00")));
+        chart.startAnimation();
+        click.setClickable(false);
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+    }
+
+    @Override
+    public void applyTexts(String username, String password, String savings) {
+//        textViewUsername.setText(username);
+//        textViewPassword.setText(password);
+        i1 = Integer.valueOf(password);
+        i2 = Integer.valueOf(username);
+        i3 = Integer.valueOf(savings);
     }
 }

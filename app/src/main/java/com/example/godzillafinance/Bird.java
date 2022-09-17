@@ -16,10 +16,10 @@ public class Bird {
 
     Bird (Resources res) {
 
-        bird1 = BitmapFactory.decodeResource(res, R.drawable.bird1);
-        bird2 = BitmapFactory.decodeResource(res, R.drawable.bird2);
-        bird3 = BitmapFactory.decodeResource(res, R.drawable.bird3);
-        bird4 = BitmapFactory.decodeResource(res, R.drawable.bird4);
+        bird1 = BitmapFactory.decodeResource(res, R.drawable.god1);
+        bird2 = BitmapFactory.decodeResource(res, R.drawable.god2);
+        bird3 = BitmapFactory.decodeResource(res, R.drawable.god3);
+        bird4 = BitmapFactory.decodeResource(res, R.drawable.god2);
 
         width = bird1.getWidth();
         height = bird1.getHeight();

@@ -1,11 +1,17 @@
 package com.example.godzillafinance;
 
+import static com.example.godzillafinance.ProfileActivity.i1;
+import static com.example.godzillafinance.ProfileActivity.i2;
+import static com.example.godzillafinance.ProfileActivity.i3;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -16,6 +22,10 @@ public class MenuActivity extends AppCompatActivity {
     private CardView FetchCardView;
     private CardView PlayCardView;
     private CardView Learning;
+
+    private TextView Budget_Tv;
+    private TextView Today_Tv;
+    private TextView Week_Tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,15 @@ public class MenuActivity extends AppCompatActivity {
         MonthlyCardView = (CardView) findViewById(R.id.MonthlyCardView);
         FetchCardView = (CardView) findViewById(R.id.FetchCardView);
         PlayCardView = (CardView) findViewById(R.id.GamesCardView);
+
+        Budget_Tv = findViewById(R.id.Budget_Tv);
+        Budget_Tv.setText("$:- "+i1);
+
+        Today_Tv = findViewById(R.id.Today_Tv);
+        Today_Tv.setText("$:- "+i2);
+
+        Week_Tv = findViewById(R.id.Week_Tv);
+        Week_Tv.setText("$:- "+i3);
 
         budgetCardView.setOnClickListener(new View.OnClickListener() {
             @Override
