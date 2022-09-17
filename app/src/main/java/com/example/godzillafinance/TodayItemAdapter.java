@@ -34,6 +34,7 @@ public class TodayItemAdapter extends RecyclerView.Adapter<TodayItemAdapter.View
     private String post_key = "";
     private String item = "";
     private int amount = 0;
+    private String ameya = "Ameya";
     private Context mcontext;
     private List<Data_Added> myDataList;
 
@@ -172,7 +173,7 @@ public class TodayItemAdapter extends RecyclerView.Adapter<TodayItemAdapter.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             item = itemView.findViewById(R.id.Name_tv);
-            amount = itemView.findViewById(R.id.amount_et);
+            amount = itemView.findViewById(R.id.Amount_tv);
             date = itemView.findViewById(R.id.Date_tv);
             imageView = itemView.findViewById(R.id.img_tv);
 
