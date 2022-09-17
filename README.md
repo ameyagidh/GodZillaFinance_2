@@ -22,10 +22,10 @@ Features of the application include the following:-
 10) Used Jira for managing the team progress thereby identifying and negating the roadblocks in the development process.
 
 ### Installation
-git clone https://github.com/ameyagidh/Slide-Puzzle-Game.git
+git clone https://github.com/ameyagidh/GodZillaFinance_2.git
 or download the zip file then 
-Unzip the file "fall_2021_final_project".
-Run the file puzzle_game.py.
+Unzip the file 
+Run the application in android studio
 
 ### Requirements:-
 
