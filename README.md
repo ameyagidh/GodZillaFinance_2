@@ -37,7 +37,10 @@ Run the application in android studio
 
 ## Screenshots:- 
 
+### Full Application
 ![Application](https://user-images.githubusercontent.com/65457905/190882925-21929b1a-aaf1-4a45-838a-ae351828361c.gif)
+
+### Game 
 ![GameGif (1)](https://user-images.githubusercontent.com/65457905/190882931-7900858a-89a3-4ab9-80f6-2cefc04ae246.gif)
 
 ### Splash Screen
