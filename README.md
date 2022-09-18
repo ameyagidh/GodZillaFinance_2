@@ -43,18 +43,6 @@ Run the application in android studio
 ### Game 
 ![GameGif (1)](https://user-images.githubusercontent.com/65457905/190884836-d34cd822-9f94-492c-9739-ee244b4505fc.gif)
 
-### Splash Screen
-![Splash Screen](https://user-images.githubusercontent.com/65457905/190884633-fb25830f-3f68-4db9-8287-2c07b8c6341c.jpg)
-
-### Sign Up
-![SignUp](https://user-images.githubusercontent.com/65457905/190884801-03326069-c1a1-49d5-b696-549ffd886e5c.jpg)
-
-### Login Activity
-![Login Activity](https://user-images.githubusercontent.com/65457905/190884810-e0360e15-af54-4938-ad0a-7fa91d616836.jpg)
-
-### Forgot Password
-![Forgot Password](https://user-images.githubusercontent.com/65457905/190884715-eec47b53-6a09-4fe1-9256-a4583ce709c8.jpg)
-
 ### Dashboard
 ![DashBoard](https://user-images.githubusercontent.com/65457905/190884727-d71e4519-0a54-490a-8e4e-8e826ba998f9.jpg)
 ![InputValues](https://user-images.githubusercontent.com/65457905/190884739-5242296a-8c48-452b-bab2-2ad4fc81bdef.jpg)
