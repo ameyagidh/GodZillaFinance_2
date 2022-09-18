@@ -51,6 +51,5 @@ Run the application in android studio
 ### Other Activities
 ![ViewAll](https://user-images.githubusercontent.com/65457905/190884752-4156004e-bccf-4a75-979f-dd2f33eea6fe.jpg)
 ![BudgetActivity](https://user-images.githubusercontent.com/65457905/190884648-f368eb05-e2a6-47db-97c8-02939a4d4fe8.jpg)
-![TodayActivity](https://user-images.githubusercontent.com/65457905/190884761-a503c14a-4a88-4137-aecf-800e936f5c20.jpg)
 ![Fetch1](https://user-images.githubusercontent.com/65457905/190884689-6aa6db9b-e958-457a-9ebd-b5d6dbdb809f.jpg)
 
