@@ -52,7 +52,7 @@ Run the application in android studio
 ### Forgot Password
 
 ### Dashboard
-![Analytics (2)](https://user-images.githubusercontent.com/65457905/190884558-2ee9ce0c-7336-4123-ab0b-bcc49599f471.jpg)
+![Analytics (3)](https://user-images.githubusercontent.com/65457905/190884570-b4ff3f15-9991-4452-8af3-c6d15e0719ef.jpg)
 
 ### Profile Activity
 
