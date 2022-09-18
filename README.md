@@ -18,8 +18,9 @@ Features of the application include the following:-
 6) Expense Tracking in total expenses where user can set the expenses for individual items and then track their expenses.
 7) Daily, Weekly and Monthly spending tracking.
 8) Game activity to keep the user engaged.
-9) Api to fetch, parse and display complex jsoon data and display latest news related to money, stocks, funds, etc.  
-10) Used Jira for managing the team progress thereby identifying and negating the roadblocks in the development process.
+9) Analytics with pie chart output
+10) Api to fetch, parse and display complex jsoon data and display latest news related to money, stocks, funds, etc.  
+11) Used Jira for managing the team progress thereby identifying and negating the roadblocks in the development process.
 
 ### Installation
 git clone https://github.com/ameyagidh/GodZillaFinance_2.git
