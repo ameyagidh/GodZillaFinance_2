@@ -38,10 +38,10 @@ Run the application in android studio
 ## Screenshots:- 
 
 ### Full Application
-![Application](https://user-images.githubusercontent.com/65457905/190884585-d694d49c-22cf-4835-8c19-e2eed79dace0.jpg)
+![Application](https://user-images.githubusercontent.com/65457905/190884831-1a8ec1fd-c39d-4bcd-9c0a-d9b558dfe44c.gif)
 
 ### Game 
-![GameGif (1)](https://user-images.githubusercontent.com/65457905/190884623-c3646466-e238-4606-bcd2-f76f33f7c8fd.jpg)
+![GameGif (1)](https://user-images.githubusercontent.com/65457905/190884836-d34cd822-9f94-492c-9739-ee244b4505fc.gif)
 
 ### Splash Screen
 ![Splash Screen](https://user-images.githubusercontent.com/65457905/190884633-fb25830f-3f68-4db9-8287-2c07b8c6341c.jpg)
