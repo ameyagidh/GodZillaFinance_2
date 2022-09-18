@@ -61,6 +61,7 @@ Run the application in android studio
 ### Profile Activity
 ![InputValues](https://user-images.githubusercontent.com/65457905/190882995-8624e17b-476f-49d8-b227-0def9df4457f.jpeg)
 ![Analytics](https://user-images.githubusercontent.com/65457905/190883000-5e4a54f7-a176-4e13-9906-19f08634c139.jpeg)
+![Analytics](https://user-images.githubusercontent.com/65457905/190883233-8727e6d5-f75f-41c8-ac1b-b8ae5716ef43.jpg)
 
 ### View All
 ![ViewAll](https://user-images.githubusercontent.com/65457905/190883003-49fa647c-827a-48aa-8fee-36e58435891f.jpeg)
