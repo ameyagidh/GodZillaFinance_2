@@ -48,15 +48,9 @@ Run the application in android studio
 ![InputValues](https://user-images.githubusercontent.com/65457905/190884739-5242296a-8c48-452b-bab2-2ad4fc81bdef.jpg)
 ![Analytics (3)](https://user-images.githubusercontent.com/65457905/190884570-b4ff3f15-9991-4452-8af3-c6d15e0719ef.jpg)
 
-### View All
+### Other Activities
 ![ViewAll](https://user-images.githubusercontent.com/65457905/190884752-4156004e-bccf-4a75-979f-dd2f33eea6fe.jpg)
-
-## Budget Activiity
 ![BudgetActivity](https://user-images.githubusercontent.com/65457905/190884648-f368eb05-e2a6-47db-97c8-02939a4d4fe8.jpg)
-
-### Today Activity
 ![TodayActivity](https://user-images.githubusercontent.com/65457905/190884761-a503c14a-4a88-4137-aecf-800e936f5c20.jpg)
-
-### News Fetch Activity
 ![Fetch1](https://user-images.githubusercontent.com/65457905/190884689-6aa6db9b-e958-457a-9ebd-b5d6dbdb809f.jpg)
 
