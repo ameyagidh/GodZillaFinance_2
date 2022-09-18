@@ -37,7 +37,7 @@ Run the application in android studio
 
 ## Screenshots:- 
 
-![Analytics](https://user-images.githubusercontent.com/65457905/190884473-5b67c45b-61bb-4994-ab6b-222c25627e8e.jpeg)
+![Analytics (1)](https://user-images.githubusercontent.com/65457905/190884528-bfc005bc-1ace-4690-92b2-19cb996e9e1f.jpg)
 
 
 ### Full Application
