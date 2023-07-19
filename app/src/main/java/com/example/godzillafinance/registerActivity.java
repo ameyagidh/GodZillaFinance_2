@@ -98,7 +98,7 @@ public class registerActivity extends AppCompatActivity {
                                         finish();
 
                                     } else {
-                                      Toast.makeText(registerActivity.this, "Authentication failed.",
+                                      Toast.makeText(registerActivity.this, "Registration failed.",
                                                 Toast.LENGTH_SHORT).show();
 
                                     }
