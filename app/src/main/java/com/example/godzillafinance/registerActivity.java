@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -33,12 +34,24 @@ public class registerActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         editTextEmail = findViewById(R.id.emailRegister);
-        editTextEmail = findViewById(R.id.passwordRegister);
+        editTextPassword = findViewById(R.id.passwordRegister);
         SignUpButton = findViewById(R.id.buttonRegister);
         progressBar = findViewById(R.id.progressbarRegister);
         textViewRegisterPage = findViewById(R.id.LoginInNowRegister);
@@ -48,7 +61,9 @@ public class registerActivity extends AppCompatActivity {
         textViewRegisterPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getApplicationContext(),registerActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -72,10 +87,15 @@ public class registerActivity extends AppCompatActivity {
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
                                     if (task.isSuccessful()) {
                                         progressBar.setVisibility(View.GONE);
                                         Toast.makeText(registerActivity.this,"Registeration Successful!!! ",Toast.LENGTH_LONG).show();
                                         FirebaseUser user = mAuth.getCurrentUser();
+
+                                         Intent intent = new Intent(getApplicationContext(),registerActivity.class);
+                                        startActivity(intent);
+                                        finish();
 
                                     } else {
                                       Toast.makeText(registerActivity.this, "Authentication failed.",
