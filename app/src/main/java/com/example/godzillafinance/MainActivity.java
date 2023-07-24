@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     Button LogoutButton;
+    Button CryptoButton;
     TextView welcomeText;
     FirebaseAuth auth;
     FirebaseUser user;
