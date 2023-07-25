@@ -8,4 +8,9 @@
     <string name="logout">Logout</string>
     <string name="crypto">crypto</string>
     <string name="explore">Explore</string>
+    <string name="crypto_tracker">Crypto Tracker</string>
+    <string name="search">Search</string>
+    <string name="symbol">Symbol</string>
+    <string name="name">Name</string>
+    <string name="rate">Rate</string>
 </resources>
