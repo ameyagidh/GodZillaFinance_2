@@ -23,6 +23,11 @@ public class Currency_rv_Adapter extends RecyclerView.Adapter<Currency_rv_Adapte
         this.context = context;
     }
 
+    public void filterList(ArrayList<CurrencyRecyclerViewModel>filteredList){
+        currencyRVModelArrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public Currency_rv_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

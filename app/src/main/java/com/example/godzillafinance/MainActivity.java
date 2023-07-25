@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         welcomeText = findViewById(R.id.WelcomeTextMain);
         user = auth.getCurrentUser();
+
+
         if(user==null){
             Intent intent = new Intent(getApplicationContext(),loginActivity.class);
             startActivity(intent);
