@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class FeatureActivity extends AppCompatActivity {
 
-    Button CryptoFeature;
+    Button CryptoFeature, GooglePayButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +17,20 @@ public class FeatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_features);
 
         CryptoFeature = findViewById(R.id.CryptoFeatureActivity);
+        GooglePayButton = findViewById(R.id.GooglePayActivity);
 
         CryptoFeature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(getApplicationContext(), CryptoTrackerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        GooglePayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getApplicationContext(), GooglePaymentActivity.class);
                 startActivity(intent);
             }
         });

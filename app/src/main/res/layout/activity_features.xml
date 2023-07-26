@@ -18,4 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
 
+    <Button
+        android:id="@+id/GooglePayActivity"
+        android:layout_width="110dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="100dp"
+        android:text="Google Pay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toEndOf="@+id/CryptoFeatureActivity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
