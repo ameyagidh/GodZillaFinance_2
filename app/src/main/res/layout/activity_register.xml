@@ -45,7 +45,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-45dp">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailRegister"
             android:hint="@string/email"
@@ -62,7 +64,18 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
             android:id="@+id/passwordRegister"
             android:hint="@string/password"
             android:layout_width="match_parent"
@@ -74,7 +87,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkBox3"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -88,24 +101,26 @@
     <Button
         android:id="@+id/buttonRegister"
         android:text="@string/signup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
-
+        android:background="@color/blue"
         />
 
     <TextView
         android:id="@+id/LoginInNowRegister"
-        android:text="Click To Login "
-        android:gravity="center"
         android:textSize="15sp"
         android:textStyle="bold"
         android:padding="5sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Already have an account? Sign in here."
         />
+
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
