@@ -8,12 +8,22 @@
     android:gravity="center"
     android:padding="15dp"
     tools:context=".registerActivity">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="318dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/register_user" />
     <TextView
         android:text="@string/register"
         android:layout_width="match_parent"
@@ -61,8 +71,8 @@
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/black"
             android:inputType="textPassword"/>
-
     </com.google.android.material.textfield.TextInputLayout>
+
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="150dp"
@@ -83,22 +93,21 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
-        android:background="@color/blue"
+
         />
 
     <TextView
         android:id="@+id/LoginInNowRegister"
+        android:text="Click To Login "
         android:gravity="center"
         android:textSize="15sp"
         android:textStyle="bold"
         android:padding="5sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Sign up here."
-
         />
     </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
 
 
