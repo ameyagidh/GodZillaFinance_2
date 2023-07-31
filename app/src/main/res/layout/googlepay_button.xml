@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clickable="true"
     android:focusable="true"
     android:layout_width="match_parent"
@@ -8,7 +7,6 @@
     android:background="@drawable/googlepay_button_background"
     android:padding="2sp"
     android:contentDescription="@string/googlepay_button_content_description">
-
     <LinearLayout
         android:duplicateParentState="true"
         android:layout_width="match_parent"
@@ -30,5 +28,4 @@
         android:scaleType="fitXY"
         android:duplicateParentState="true"
         android:src="@drawable/googlepay_button_overlay"/>
-
 </RelativeLayout>
