@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,8 @@ import java.util.Objects;
 
 public class registerActivity extends AppCompatActivity {
 
-    TextInputEditText editTextEmail,editTextPassword;
+    TextInputEditText editTextEmail;
+    EditText editTextPassword;
     Button SignUpButton;
     ProgressBar progressBar;
     TextView textViewRegisterPage;

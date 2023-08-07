@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,9 +27,12 @@ public class loginActivity extends AppCompatActivity {
 
     TextInputEditText editTextEmail,editTextPassword;
     Button SignInButton;
+    CheckBox remember;
+    TextView mforget_password;
     ProgressBar progressBar;
     TextView textViewLoginPage;
     private FirebaseAuth mAuth;
+
 
     @Override
     public void onStart() {
@@ -52,6 +57,28 @@ public class loginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbarLogin);
         textViewLoginPage = findViewById(R.id.SignUpNowLogin);
         mAuth = FirebaseAuth.getInstance();
+        remember=findViewById(R.id.checkBox2);
+        mforget_password = findViewById(R.id.forgot_password);
+
+        SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+        String checkbox=preferences.getString("remember","");
+        if(checkbox.equals("true"))
+        {
+            Intent intent=new Intent(loginActivity.this,MainActivity.class);
+            startActivity(intent);
+        }
+        else if(!checkbox.equals("false"))
+        {
+
+        }
+
+        mforget_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(loginActivity.this,resetpassword.class);
+                startActivity(intent);
+            }
+        });
 
         textViewLoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
