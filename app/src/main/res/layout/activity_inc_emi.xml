@@ -1,124 +1,90 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".inc_emi"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".inc_emi">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
+    <include
+        android:id="@+id/main_tax_toolbar"
+        layout="@layout/main_tax_toolbar"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
-            android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="20dp">
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="223dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="8dp"
+        android:editable="false"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:text=" Income tax and emi calculator"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_principal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/principal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789."
-                    android:hint="Principal"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    tools:ignore="Autofill" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_interest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/interest"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789."
-                    android:hint="Interest"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    tools:ignore="Autofill" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="280dp"
+        android:layout_height="53dp"
+        android:background="@color/blue"
+        android:text="Income Tax Calculator"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.313"
+        tools:ignore="HardcodedText" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="282dp"
+        android:layout_height="53dp"
+        android:background="@color/blue"
+        android:text="EMI Calculator"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.476"
+        tools:ignore="HardcodedText" />
 
-            <com.google.android.material.textfield.TextInputLayout
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00897B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.213" />
 
-                android:id="@+id/input_layout_tenure"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00897B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.605" />
 
-                <EditText
-                    android:id="@+id/years"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789."
-                    android:hint="Years"
-                    android:inputType="number"
-                    tools:ignore="Autofill" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/btn_calculate2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:background="@color/blue"
-                android:text="Calculate"
-                android:textColor="@color/black"
-                tools:ignore="HardcodedText" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/input_layout_emi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
-
-                <EditText
-                    android:id="@+id/emi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Emi"
-                    android:inputType="number"
-                    android:maxEms="0"
-                    tools:ignore="Autofill" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/input_layout_total_Interest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/interest_total"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest_total"
-                    android:inputType="number"
-                    tools:ignore="Autofill" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>

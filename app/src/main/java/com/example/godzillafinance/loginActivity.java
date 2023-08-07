@@ -37,10 +37,10 @@ public class loginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+//            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(),first_home_page.class);
             startActivity(intent);
             finish();
         }
@@ -64,7 +64,7 @@ public class loginActivity extends AppCompatActivity {
         String checkbox=preferences.getString("remember","");
         if(checkbox.equals("true"))
         {
-            Intent intent=new Intent(loginActivity.this,MainActivity.class);
+            Intent intent=new Intent(loginActivity.this,first_home_page.class);
             startActivity(intent);
         }
         else if(!checkbox.equals("false"))
@@ -114,7 +114,8 @@ public class loginActivity extends AppCompatActivity {
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Toast.makeText(loginActivity.this, "Login Successful!!!",
                                                 Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+//                                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(),first_home_page.class);
                                         startActivity(intent);
                                         finish();
                                     } else {
@@ -123,10 +124,8 @@ public class loginActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-
                 }
             }
         });
-
     }
 }
