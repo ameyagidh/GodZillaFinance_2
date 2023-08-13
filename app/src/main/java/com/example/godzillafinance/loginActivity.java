@@ -64,7 +64,7 @@ public class loginActivity extends AppCompatActivity {
         String checkbox=preferences.getString("remember","");
         if(checkbox.equals("true"))
         {
-            Intent intent=new Intent(loginActivity.this,first_home_page.class);
+            Intent intent=new Intent(loginActivity.this,MainActivity.class);
             startActivity(intent);
         }
         else if(!checkbox.equals("false"))

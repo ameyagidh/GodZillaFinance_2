@@ -6,10 +6,6 @@
     android:orientation="vertical"
     tools:context=".feedback">
 
-    <include
-        android:id="@+id/about_toolbar"
-        layout="@layout/feedback_toolbar"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

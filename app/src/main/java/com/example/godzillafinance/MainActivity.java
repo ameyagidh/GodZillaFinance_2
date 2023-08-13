@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     Button LogoutButton;
+//    Button DashboardButton;
     Button ExploreButton;
     TextView welcomeText;
     FirebaseAuth auth;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         LogoutButton = findViewById(R.id.signOutButtonMainActivity);
+//        DashboardButton = findViewById(R.id.dashboard);
         ExploreButton = findViewById(R.id.ExploreMainActivity);
         auth = FirebaseAuth.getInstance();
         welcomeText = findViewById(R.id.WelcomeTextMain);
@@ -49,13 +51,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         ExploreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FeatureActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CryptoTrackerActivity.class);
                 startActivity(intent);
             }
         });
+
+
 
     }
 }
