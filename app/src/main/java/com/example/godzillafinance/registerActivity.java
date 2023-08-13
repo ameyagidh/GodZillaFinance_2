@@ -63,7 +63,7 @@ public class registerActivity extends AppCompatActivity {
         textViewRegisterPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),registerActivity.class);
+                Intent intent = new Intent(getApplicationContext(),loginActivity.class);
                 startActivity(intent);
                 finish();
             }
