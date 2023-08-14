@@ -50,6 +50,10 @@
         android:icon="@drawable/ic_star_rate">
 
     </item>
+    <item android:id="@+id/more"
+        android:title="More"
+        android:icon="@drawable/ic_baseline_more_horiz_24">
+    </item>
     <item android:id="@+id/about"
         android:title="About"
         android:icon="@drawable/ic_about">
@@ -58,7 +62,6 @@
     <item android:id="@+id/logout"
         android:title="Logout"
         android:icon="@drawable/ic_logout">
-
     </item>
 </group>
 </menu>

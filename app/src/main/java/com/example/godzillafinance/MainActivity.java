@@ -7,16 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button LogoutButton;
-//    Button DashboardButton;
-    Button ExploreButton;
-    TextView welcomeText;
     FirebaseAuth auth;
     FirebaseUser user;
 
@@ -25,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LogoutButton = findViewById(R.id.signOutButtonMainActivity);
-//        DashboardButton = findViewById(R.id.dashboard);
-        ExploreButton = findViewById(R.id.ExploreMainActivity);
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.openDrawer(GravityCompat.START);
+
         auth = FirebaseAuth.getInstance();
-        welcomeText = findViewById(R.id.WelcomeTextMain);
         user = auth.getCurrentUser();
 
 
@@ -39,30 +37,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else{
-            welcomeText.setText(user.getEmail());
+
         }
-        LogoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(),loginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-
-
-        ExploreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CryptoTrackerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
     }
 }
