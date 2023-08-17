@@ -6,10 +6,22 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="blue">#0009ff</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black_shade1">#292D36</color>
     <color name="black_shade2">#272B33</color>
     <color name="black_shade3">#021853</color>
+    <color name="gray">#646873</color>
     <color name="crimson">#ED4747</color>
-    <color name="blue">#808ADF</color>
+    <color name="green">#009688</color>
+    <color name="yellow">#FFFFC107</color>
+    <color name="toolbar_color">#FFAEF509</color>
+    <color name="red">#FFF41504</color>
+    <color name="date_color"/>
+    <color name="expense_amount" />
+    <color name="expense_color">#FFFFC107</color>
+    <color name="dashboard_color">#FFFFC107</color>
+    <color name="income_color">#FFFFC107</color>
+    <color name="golden">#FFD700</color>
+
 </resources>

@@ -113,13 +113,13 @@ public class Profile extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-
-        ImageView back_arrow=findViewById(R.id.back);
-        back_arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+//
+//        ImageView back_arrow=findViewById(R.id.back);
+//        back_arrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
     }
 }
