@@ -37,7 +37,8 @@ Run the application in android studio
 
 ## Screenshots:- 
 
-
+<img width="293" alt="Screenshot 2023-09-26 at 2 09 00 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/a400d88e-c678-46d4-8f19-36b7954773ea">
+<img width="305" alt="Screenshot 2023-09-26 at 2 09 22 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/0d829b57-e11d-4210-88d2-49542882e294">
 <img width="305" alt="Screenshot 2023-09-26 at 2 03 39 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/1745e80a-e603-4636-8174-3de0d377500f">
 <img width="321" alt="Screenshot 2023-09-26 at 2 04 06 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/5c04464c-9281-4894-802e-affc884a640e">
 <img width="313" alt="Screenshot 2023-09-26 at 2 05 20 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/b68120b7-32ff-4358-9374-2125fdb8f860">
@@ -50,5 +51,4 @@ Run the application in android studio
 <img width="306" alt="Screenshot 2023-09-26 at 2 07 53 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/a2202b59-d3bd-4b4b-97a7-371f2c4d52d9">
 <img width="297" alt="Screenshot 2023-09-26 at 2 08 14 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/311ca3b3-1f60-4324-ad24-00ceaf7e3a7a">
 <img width="296" alt="Screenshot 2023-09-26 at 2 08 48 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/63900f79-8d81-4496-97fb-3a3f349b2054">
-<img width="293" alt="Screenshot 2023-09-26 at 2 09 00 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/a400d88e-c678-46d4-8f19-36b7954773ea">
-<img width="305" alt="Screenshot 2023-09-26 at 2 09 22 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/0d829b57-e11d-4210-88d2-49542882e294">
+
