@@ -1,4 +1,4 @@
-# GodZillaFinance_2
+# GodZillaFinance
 
 Team Members :- 
 1) Ameya Santosh Gidh
