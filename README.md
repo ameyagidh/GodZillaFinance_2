@@ -9,6 +9,7 @@ Team Members :-
 
 GodzillaFinance application is an all in one personal budgetting application prototype coded in java programming,
 Our applicaition is designed based on surveys conducted, the necessary features in a budgetting application were identified that would help streamline management of expenses. The application was designed using figma and xml diagrams were linked to the java classes thus creating the necessary activities.
+Firebase => ameyagidh21999@gmail.com
 Features of the application include the following:-
 1) Login and Sign Up for Users using firebase.
 2) Forgot password feature.
