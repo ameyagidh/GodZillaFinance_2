@@ -53,5 +53,3 @@ Run the application in android studio
 <img width="297" alt="Screenshot 2023-09-26 at 2 08 14 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/311ca3b3-1f60-4324-ad24-00ceaf7e3a7a">
 <img width="296" alt="Screenshot 2023-09-26 at 2 08 48 AM" src="https://github.com/ameyagidh/GodZillaFinance_2/assets/65457905/63900f79-8d81-4496-97fb-3a3f349b2054">
 
-
-Firebase => ameyagidh21999@gmail.com
